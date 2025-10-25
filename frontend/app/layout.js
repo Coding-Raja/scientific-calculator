@@ -14,6 +14,12 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Scientific Calculator",
   description: "An online scientific calculator",
+  icons: {
+    icon: {
+      url: '/Hacker.png',
+      type: 'image/png',
+    }
+  }
 };
 
 export default function RootLayout({ children }) {
