@@ -6,3 +6,16 @@
     width: 100%;
     height: 100vh;
 }
+
+.bgmain{
+    perspective: 1000px;
+}
+
+.bgbutton{
+    transition: 0.5s ease;
+}
+
+.bgbutton:hover{
+    cursor: pointer;
+    transform: translateZ(50px);
+}
