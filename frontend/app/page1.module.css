@@ -1,21 +1,49 @@
-.back{
-    background-image: url('/calculator1.jpeg');
-    background-position: center;
-    background-repeat: no-repeat;
+.back {
+  background-image: url('/calculator1.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh; /* better than fixed height for smaller devices */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem; /* ensures breathing room on mobile */
+}
+
+/* Responsive scaling for smaller devices */
+@media (max-width: 640px) {
+  .back {
+    background-position: top;
     background-size: cover;
-    width: 100%;
-    height: 100vh;
+    padding: 1.5rem;
+  }
 }
 
-.bgmain{
-    perspective: 1000px;
+.bgmain {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 500px;
 }
 
-.bgbutton{
-    transition: 0.5s ease;
+@media (min-width: 768px) {
+  .bgmain {
+    max-width: 700px;
+  }
 }
 
-.bgbutton:hover{
-    cursor: pointer;
-    transform: translateZ(50px);
+@media (min-width: 1024px) {
+  .bgmain {
+    max-width: 900px;
+  }
+}
+
+.bgbutton {
+  transition: 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+.bgbutton:hover {
+  cursor: pointer;
+  transform: translateZ(50px) scale(1.05);
 }
