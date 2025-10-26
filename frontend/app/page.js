@@ -1,14 +1,15 @@
 import Image from "next/image";
 import styles from "./page1.module.css"
+import Link from "next/link"
 
 export default function Home() {
   return (
     <>
       <section className={`${styles.back} flex w-full justify-center items-center sm:w-1/2 md:w-3/4 lg:w-full`}>
-        <div className={`${styles.bgmain} flex flex-col justify-center items-center bg-linear-to-b from-black/50 via-black/40 to-white/20 w-1/2 h-1/2 rounded-lg`}>
+        <div className={`${styles.bgmain} flex flex-col justify-center items-center bg-linear-to-b from-black/60 via-black/50 to-white/20 w-1/2 h-1/2 rounded-lg`}>
           <h1 className="text-white/80 text-center text-3xl mb-3 ">Scientific Calculator</h1>
           <h3 className="text-white/90 text-center text-xl mb-4 ">An online calculator to calculate mathematical problems</h3>
-          <div className={`${styles.bgbutton} w-1/2 bg-black p-4 text-white text-center text-xl rounded-lg hover:shadow-lg hover:shadow-white/30`}>Click to calculate</div>
+          <div className={`${styles.bgbutton} w-1/2 bg-black p-4 text-white text-center text-xl rounded-lg hover:shadow-lg hover:shadow-white/30`}><Link href="/calculator">Click to calculate</Link></div>
         </div>
       </section>
     </>
