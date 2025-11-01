@@ -25,25 +25,24 @@ export default function CalculatorPage() {
 
   // Placeholder evaluate function – will call Python backend later
   const evaluate = async () => {
-    if (!expr) return;
+  if (!expr) return;
 
-    try {
-      // 🔹 You’ll replace this with a Python API call
-      // Example (for later):
-      // const res = await fetch("http://localhost:5000/calc", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({ expression: expr }),
-      // });
-      // const data = await res.json();
-      // setResult(data.result);
+  try {
+    const res = await fetch("http://127.0.0.1:5000/calc", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ expression: expr }),
+    });
 
-      // For now, just show a placeholder message:
-      setResult('Waiting for Python backend...');
-    } catch (err) {
-      setResult('Error connecting to backend');
-    }
-  };
+    const data = await res.json();
+    setResult(data.result);
+  } catch (err) {
+    setResult("⚠️ Error connecting to backend");
+  }
+};
+
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') evaluate();
